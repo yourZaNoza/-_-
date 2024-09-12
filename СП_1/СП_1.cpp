@@ -1,11 +1,32 @@
-﻿// СП_1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// СП_1.cpp : Этот файл содержит тестовое задание для дз_2
 //
-
 #include <iostream>
-
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    int number = 42;
+    cout << number << endl;
+
+    double a = 3.14;
+    double b = 2.17;
+    cout << a << endl;
+    cout << b << endl;
+
+
+    char letter = 'A';
+    int code = int(letter);
+    cout << code << endl;
+
+
+    cout << "Hello World" << endl;
+
+    cout << sizeof(char) << endl;
+    cout << sizeof(int) << endl;
+    cout << sizeof(float) << endl;
+    cout << sizeof(double) << endl;
+
+    return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
