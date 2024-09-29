@@ -300,8 +300,8 @@ int* mergeAndCompare(const int* arr1, int size1, const int* arr2, int size2, int
         return nullptr; // указать на ошибку
     }
 
-    mergedSize = size1 + size2; // размер объединения
-    int* mergedArray = new int[mergedSize]; // новый массив
+    mergedSize = size1 + size2;
+    int* mergedArray = new int[mergedSize];
     for (int i = 0; i < size1; ++i) {
         mergedArray[i] = arr1[i];
     }
