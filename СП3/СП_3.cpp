@@ -40,7 +40,7 @@ int main()
     */
 
     // задание 2
-    /*int c = 0;
+    int c = 0;
     int i = 2;
     int degree = 0;
     do {
@@ -48,7 +48,7 @@ int main()
         degree = pow(i, c);
     } while (c < 10);
     cout << "2 в степени 10: " << degree << endl;
-    */
+    
 
     // задание 3
     /*int fact = 1;
@@ -118,7 +118,7 @@ int main()
     }*/
 
     // задание 8
-    int operation;
+    /*int operation;
     int x;
     int y;
     int sum;
@@ -194,6 +194,6 @@ int main()
     }
     else {
         cout << "Неверная операция" << endl;
-    }
+    }*/
     return 0;
 }

@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-#include <iostream>
 #include "findMax.h"
 #include "sumEven.h"
 

@@ -119,7 +119,7 @@ int main()
     {
       cin >> a[i];
     }
-    cout << "Певернутый массив: " << endl;
+    cout << "Перевернутый массив: " << endl;
     for (int i = size - 1; i >= 0; i--) 
     { 
       cout << a[i] << " ";
@@ -181,7 +181,7 @@ int main()
       cout << "Количество А в строке: " << counter;*/
 
   // задание 10
-    char stroka[] = { "aaaabbbbccccdddd" };
+    char stroka[] = {"aaaabbbbccccdddd"};
     int size = sizeof(stroka) / sizeof(stroka[0]);
 
     for (int i = 0; i < size - 1; i++) {
