@@ -150,68 +150,68 @@ string toUpperCase(const string& str) { // ссылка на объект string
 //    return 0;  
 //}
 // задача 9
-//int main() {
-//
-//    setlocale(LC_ALL, "");
-//    int intArraySize = 5;
-//    int* intArray = new int[intArraySize] {1, 2, 3, 4, 5};
-//
-//    cout << "Оригинальный целочисленный массив: ";
-//    for (int i = 0; i < intArraySize; ++i) {
-//        cout << intArray[i] << " ";
-//    }
-//    cout << endl;
-//
-//    int newIntArraySize = 2;
-//    intArray = resizeArray(intArray, intArraySize, newIntArraySize);
-//    intArraySize = newIntArraySize;
-//
-//    cout << "Измененный целочисленный массив: ";
-//    for (int i = 0; i < intArraySize; ++i) {
-//        cout << intArray[i] << " ";
-//    }
-//    cout << endl;
-//
-//    delete[] intArray;
-//
-//    int doubleArraySize = 5;
-//    double* doubleArray = new double[doubleArraySize] {1.1, 2.2, 3.3, 4.4, 5.5};
-//
-//    cout << "Оригинальный вещественный массив: ";
-//    for (int i = 0; i < doubleArraySize; ++i) {
-//        cout << doubleArray[i] << " ";
-//    }
-//    cout << endl;
-//
-//    int newDoubleArraySize = 2;
-//    doubleArray = resizeArray(doubleArray, doubleArraySize, newDoubleArraySize);
-//    doubleArraySize = newDoubleArraySize;
-//
-//    cout << "Измененный вещественный массив: ";
-//    for (int i = 0; i < doubleArraySize; ++i) {
-//        cout << doubleArray[i] << " ";
-//    }
-//    cout << endl;
-//
-//    delete[] doubleArray; 
-//
-//    return 0;
-//}
-// задача 10
 int main() {
+
     setlocale(LC_ALL, "");
+    int intArraySize = 5;
+    int* intArray = new int[intArraySize] {1, 2, 3, 4, 5};
 
-    int intArray[] = { 1, 2, 4, 5, 7 };
-    int intArraySize = sizeof(intArray) / sizeof(intArray[0]);
-
-    cout << "Массив ";
+    cout << "Оригинальный целочисленный массив: ";
     for (int i = 0; i < intArraySize; ++i) {
         cout << intArray[i] << " ";
     }
     cout << endl;
 
-    int sumEven = sumElements(intArray, intArraySize, isEven);
-    cout << "Сумма четных элементов: " << sumEven << endl;
+    int newIntArraySize = 2;
+    intArray = resizeArray(intArray, intArraySize, newIntArraySize);
+    intArraySize = newIntArraySize;
+
+    cout << "Измененный целочисленный массив: ";
+    for (int i = 0; i < intArraySize; ++i) {
+        cout << intArray[i] << " ";
+    }
+    cout << endl;
+
+    delete[] intArray;
+
+    int doubleArraySize = 5;
+    double* doubleArray = new double[doubleArraySize] {1.1, 2.2, 3.3, 4.4, 5.5};
+
+    cout << "Оригинальный вещественный массив: ";
+    for (int i = 0; i < doubleArraySize; ++i) {
+        cout << doubleArray[i] << " ";
+    }
+    cout << endl;
+
+    int newDoubleArraySize = 2;
+    doubleArray = resizeArray(doubleArray, doubleArraySize, newDoubleArraySize);
+    doubleArraySize = newDoubleArraySize;
+
+    cout << "Измененный вещественный массив: ";
+    for (int i = 0; i < doubleArraySize; ++i) {
+        cout << doubleArray[i] << " ";
+    }
+    cout << endl;
+
+    delete[] doubleArray; 
 
     return 0;
 }
+// задача 10
+//int main() {
+//    setlocale(LC_ALL, "");
+//
+//    int intArray[] = { 1, 2, 4, 5, 7 };
+//    int intArraySize = sizeof(intArray) / sizeof(intArray[0]);
+//
+//    cout << "Массив ";
+//    for (int i = 0; i < intArraySize; ++i) {
+//        cout << intArray[i] << " ";
+//    }
+//    cout << endl;
+//
+//    int sumEven = sumElements(intArray, intArraySize, isEven);
+//    cout << "Сумма четных элементов: " << sumEven << endl;
+//
+//    return 0;
+//}
