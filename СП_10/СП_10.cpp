@@ -1,10 +1,12 @@
-﻿// СП_10.cpp: Этот файл содержит задание 1 из ДЗ_10
+﻿// СП_10.cpp: Этот файл содержит задания из ДЗ_10
 
 #include <iostream>
 #include "caesarCipher.h"
+#include "calculate.h"
 using namespace std;
 
-int main() {
+// задание 1, caesarCipher.h, caesarCipher.cpp
+/*int main() {
     setlocale(LC_ALL, "");
     char operation;
     int shift;
@@ -44,5 +46,77 @@ int main() {
 
     } while (true);
 
+    return 0;
+}*/
+
+// задание 2 , calculate.h, calculate.cpp
+int main() {
+    setlocale(LC_ALL, "");
+    char operation;
+    int a, b, n;
+    bool continueCalculation = true;
+
+    do {
+        cout << "" << endl;
+        cout << "    Выберите операцию: +, -, *, /, !, ^" << endl;
+        cout << "    Если вы хотите выйти, введите F" << endl;
+        cin >> operation;
+
+        switch (operation) {
+        case 'F':
+            cout << "Выход";
+            continueCalculation = false;
+            break;
+        case '+':
+            cout << "Введите два целых числа (через пробел): ";
+            cin >> a >> b;
+            cout << "Результат: " << add(a, b) << endl;
+            break;
+        case '-':
+            cout << "Введите два целых числа (через пробел): ";
+            cin >> a >> b;
+            cout << "Результат: " << subtract(a, b) << endl;
+            break;
+        case '*':
+            cout << "Введите два целых числа (через пробел): ";
+            cin >> a >> b;
+            cout << "Результат: " << multiply(a, b) << endl;
+            break;
+        case '/':
+           cout << "Введите два целых числа (через пробел): ";
+            cin >> a >> b;
+            try {
+                cout << "Результат: " << divide(a, b) << endl;
+            }
+            catch (const std::invalid_argument& e) {
+                cerr << "Ошибка: " << e.what() << endl;
+            }
+            break;
+        case '!':
+            cout << "Введите число: ";
+            cin >> n;
+            try {
+                cout << "Результат: " << factorial(n) << endl;
+            }
+            catch (const std::invalid_argument& e) {
+                cerr << "Ошибка: " << e.what() << endl;
+            }
+            break;
+        case '^':
+            cout << "Введите основание и степень (через пробел): ";
+            cin >> a >> b;
+            try {
+                cout << "Результат: " << power(a, b) << endl;
+            }
+            catch (const std::invalid_argument& e) {
+                cerr << "Ошибка: " << e.what() << endl;
+            }
+            break;
+        default:
+            cout << "Неверная операция" << endl;
+            break;
+        }
+    } while (continueCalculation);
+    
     return 0;
 }

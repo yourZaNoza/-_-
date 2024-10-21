@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="caesarCipher.cpp" />
+    <ClCompile Include="calculate.cpp" />
     <ClCompile Include="СП_10.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="caesarCipher.h" />
+    <ClInclude Include="calculate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
