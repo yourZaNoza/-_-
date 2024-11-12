@@ -13,7 +13,7 @@ using namespace std;
 // вывод данных структуры в консоль. Вызовите данные функции для каждого экземпляра структуры.
 // 4. Созданные функции определите как методы структуры Human.Вызовите данные методы для каждого экземпляра структуры.
 
-/*struct Human {
+struct Human {
     const char* humanFirstName;
     const char* humanLastName;
     int humanAge;
@@ -80,7 +80,7 @@ int main()
 
     delete hum1;
     return 0;
-}*/
+}
 
 // Задача 2. Структура Car
 // 1. Создайте структуру для хранения информации об автомобиле.
@@ -97,85 +97,85 @@ int main()
 // Вызовите данные методы для каждого экземпляра структуры.
 
 
-struct Car {
-    const char* carMark;
-    const char* carColor;
-    const char* carType;
-    float carEC; // engine capacity
-    float carMileage;
-
-    double Fuel() {
-        double EC = carEC;
-        double M = carMileage;
-        cout << "Average fuel consumption: " << (EC / (M * 0,1)) << endl;
-        return (EC / (M * 100));
-    }
-
-    void MileageChange() {
-        int answer;
-        int newMileage;
-        cout << "Хотите изменить пробег? 1 - да, 2 - нет: ";
-        cin >> answer;
-        if (answer == 1) {
-            cout << "Введите новый пробег: ";
-            cin >> newMileage;
-            cout << "Вписали" << endl;
-            cout << "" << endl;
-        }
-        if (answer == 2) {
-            cout << "Оставляем как есть" << endl;
-            cout << "" << endl;
-        }
-       
-    }
-
-    void displayCar() {
-        setlocale(LC_ALL, "");
-        cout << "Марка: " << carMark << endl;
-        cout << "Цвет: " << carColor << endl;
-        cout << "Тип кузова: " << carType << endl;
-        cout << "Объем двигателя: " << carEC << endl;
-        cout << "Пробег: " << carMileage << endl;
-    }
-
-};
-
-
-int main()
-{
-    Car* car1 = new Car;
-    car1->carMark = "Мерседес";
-    car1->carColor = "Черный";
-    car1->carType = "Кроссовер";
-    car1->carEC = 5;
-    car1->carMileage = 50000;
-    car1->displayCar();
-    car1->Fuel();
-    car1->MileageChange();
-
-    Car car2{ "БМВ", "Белый", "Универсал", 4, 40000 };
-    car2.displayCar();
-    car2.Fuel();
-    car2.MileageChange();
-
-    Car car3 = { "Порш", "Пурпурный", "Купе", 3, 30000 };
-    car3.displayCar();
-    car3.Fuel();
-    car3.MileageChange();
-
-    Car car4;
-    car4.carMark = "Ауди";
-    car4.carColor = "Аквамарин";
-    car4.carType = "Фастбэк";
-    car4.carEC = 5;
-    car4.carMileage = 50000;
-    car4.displayCar();
-    car4.Fuel();
-    car4.MileageChange();
-
-    delete car1;
-    return 0;
-}
+//struct Car {
+//    const char* carMark;
+//    const char* carColor;
+//    const char* carType;
+//    float carEC; // engine capacity
+//    float carMileage;
+//
+//    double Fuel() {
+//        double EC = carEC;
+//        double M = carMileage;
+//        cout << "Average fuel consumption: " << (EC / (M * 0,1)) << endl;
+//        return (EC / (M * 100));
+//    }
+//
+//    void MileageChange() {
+//        int answer;
+//        int newMileage;
+//        cout << "Хотите изменить пробег? 1 - да, 2 - нет: ";
+//        cin >> answer;
+//        if (answer == 1) {
+//            cout << "Введите новый пробег: ";
+//            cin >> newMileage;
+//            cout << "Вписали" << endl;
+//            cout << "" << endl;
+//        }
+//        if (answer == 2) {
+//            cout << "Оставляем как есть" << endl;
+//            cout << "" << endl;
+//        }
+//       
+//    }
+//
+//    void displayCar() {
+//        setlocale(LC_ALL, "");
+//        cout << "Марка: " << carMark << endl;
+//        cout << "Цвет: " << carColor << endl;
+//        cout << "Тип кузова: " << carType << endl;
+//        cout << "Объем двигателя: " << carEC << endl;
+//        cout << "Пробег: " << carMileage << endl;
+//    }
+//
+//};
+//
+//
+//int main()
+//{
+//    Car* car1 = new Car;
+//    car1->carMark = "Мерседес";
+//    car1->carColor = "Черный";
+//    car1->carType = "Кроссовер";
+//    car1->carEC = 5;
+//    car1->carMileage = 50000;
+//    car1->displayCar();
+//    car1->Fuel();
+//    car1->MileageChange();
+//
+//    Car car2{ "БМВ", "Белый", "Универсал", 4, 40000 };
+//    car2.displayCar();
+//    car2.Fuel();
+//    car2.MileageChange();
+//
+//    Car car3 = { "Порш", "Пурпурный", "Купе", 3, 30000 };
+//    car3.displayCar();
+//    car3.Fuel();
+//    car3.MileageChange();
+//
+//    Car car4;
+//    car4.carMark = "Ауди";
+//    car4.carColor = "Аквамарин";
+//    car4.carType = "Фастбэк";
+//    car4.carEC = 5;
+//    car4.carMileage = 50000;
+//    car4.displayCar();
+//    car4.Fuel();
+//    car4.MileageChange();
+//
+//    delete car1;
+//    return 0;
+//}
 
 // Задача 3. Структура Animal.
 // 1. Создайте структуру для хранения информации о животных.

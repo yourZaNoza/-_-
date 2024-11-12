@@ -1,6 +1,5 @@
 // заголовочный файл для СП_9, задания 1
-#ifndef FINDMAX_H
-#define FINDMAX_H
+#pragma once
 
 // макс элемент
 template <typename T>
@@ -11,5 +10,3 @@ int compareInt(int a, int b);
 
 // сравнение вещ.чисел
 double compareDouble(double a, double b);
-
-#endif 

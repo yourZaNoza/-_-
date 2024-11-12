@@ -1,6 +1,3 @@
-#ifndef CAESAR_CIPHER_H
-#define CAESAR_CIPHER_H
+#pragma once
 
 char caesarCipher(char ch, int shift, bool encrypt);
-
-#endif
