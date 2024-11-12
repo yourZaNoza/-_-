@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "");
-    /*int arr[] = { 5, 4 ,3, 4, 9 };
+    int arr[] = { 5, 4 ,3, 4, 9 };
     int arrayLength = sizeof(arr) / sizeof(arr[0]);
     int evenCount = 0;
     for (int i = 0; i < arrayLength; ++i)
@@ -19,7 +19,7 @@ int main()
         }
     }
     cout << "Количество четных элементов в массиве {5, 4, 3, 4, 9,} равно: " << evenCount << endl;
-    */
+    
     
     // задание 1
     /*int array[7] = { 2, 3, 4, 5, 2, 8, 10 };
@@ -181,7 +181,7 @@ int main()
       cout << "Количество А в строке: " << counter;*/
 
   // задание 10
-    char stroka[] = {"aaaabbbbccccdddd"};
+    /*char stroka[] = {"aaaabbbbccccdddd"};
     int size = sizeof(stroka) / sizeof(stroka[0]);
 
     for (int i = 0; i < size - 1; i++) {
@@ -201,7 +201,7 @@ int main()
             stroka[i] = 'D';
         }
     }
-    cout << stroka;
+    cout << stroka;*/
 
     return 0;
 }
