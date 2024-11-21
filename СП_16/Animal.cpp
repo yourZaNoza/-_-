@@ -46,8 +46,8 @@ animalType(correctAlpha(type)), animalColor(correctAlpha(color)), animalAge(corr
 // делегирование конструкторов
 Animal::Animal(std::string name, std::string type, std::string color, int age) : Animal(animalName, animalType, animalColor, animalAge, 0) {}
 Animal::Animal(std::string name, std::string type, std::string color) : Animal(animalName, animalType, animalColor, 0, 0) {}
-Animal::Animal(std::string name, std::string type) : Animal(animalName, animalType, 0, 0, 0) {}
-Animal::Animal(std::string name) : Animal(animalName, 0, 0, 0, 0) {}
+Animal::Animal(std::string name, std::string type) : Animal(animalName, animalType, "undefined", 0, 0) {}
+Animal::Animal(std::string name) : Animal(animalName, "undefined", "undefined", 0, 0) {}
 
 // геттеры и сеттеры
 void Animal::setAnimalName(std::string name) {
