@@ -12,8 +12,6 @@ using namespace std;
 // Добавьте в классы - наследники как минимум по 1 методу – для вывода информации о данных.
 // Продемонстрируйте работу внесенных изменений в main.
 
-
-
 int main() {
     setlocale(LC_ALL, "");
     House* ani1 = new House("Hugh", "Cat", "Black", 5, 3.0, "House");

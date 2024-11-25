@@ -1,93 +1,101 @@
-#include <iostream>
 #include "Animal.h"
 using namespace std;
 
 // деструктор
 Animal::~Animal() {}
 
+//конструкторы
+Animal::Animal() {
+    this->_animalName = "undefined";
+    this->_animalType = "undefined";
+    this->_animalColor = "undefined";
+    this->_animalAge = 0;
+    this->_animalWeight = 0;
+}
+
+// список инициализации
+Animal::Animal(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight) : _animalName(correctAlpha(animalName)),
+_animalType(correctAlpha(animalType)), _animalColor(correctAlpha(animalColor)), _animalAge(correctCount(animalAge)), _animalWeight(correctCount(animalWeight)) {}
+
+// делегирование конструкторов
+Animal::Animal(std::string animalName, std::string animalType, std::string animalColor, int animalAge) : Animal(animalName, animalType, animalColor, animalAge, 0) {}
+Animal::Animal(std::string animalName, std::string animalType, std::string animalColor) : Animal(animalName, animalType, animalColor, 0, 0) {}
+Animal::Animal(std::string animalName, std::string animalType) : Animal(animalName, animalType, "undefined", 0, 0) {}
+Animal::Animal(std::string animalName) : Animal(animalName, "undefined", "undefined", 0, 0) {}
+
 // перегруженные операторы 
 Animal Animal::operator++() {
-    animalWeight += 0.52;
+    _animalWeight += 0.52;
     return *this;
 }
 
 Animal Animal::operator--() {
-    if (animalWeight > 0)
+    if (_animalWeight > 0)
     {
-        animalWeight -= 0.52;
+        _animalWeight -= 0.52;
         return *this;
     }
     else cout << "Вес меньше 1 кг!" << endl;
 }
 
 bool Animal::operator< (Animal other) {
-    return this->animalWeight < other.animalWeight;
+    return this->_animalWeight < other._animalWeight;
 }
 
 bool Animal::operator> (Animal other) {
-    return this->animalWeight > other.animalWeight;
+    return this->_animalWeight > other._animalWeight;
 }
 
 ostream& operator<< (ostream& output, Animal a) {
     setlocale(LC_ALL, "");
-    output << "Имя: " << a.animalName << endl
-        << "Вид: " << a.animalType << endl
-        << "Окрас: " << a.animalColor << endl
-        << "Возраст: " << a.animalAge << endl
-        << "Вес: " << a.animalWeight << endl
+    output << "Имя: " << a._animalName << endl
+        << "Вид: " << a._animalType << endl
+        << "Окрас: " << a._animalColor << endl
+        << "Возраст: " << a._animalAge << endl
+        << "Вес: " << a._animalWeight << endl
         << "\n";
     return output;
 }
 
-// список инициализации
-Animal::Animal(std::string name, std::string type, std::string color, int age, float weight) : animalName(correctAlpha(name)),
-animalType(correctAlpha(type)), animalColor(correctAlpha(color)), animalAge(correctCount(age)), animalWeight(correctCount(weight)) {}
-
-// делегирование конструкторов
-Animal::Animal(std::string name, std::string type, std::string color, int age) : Animal(animalName, animalType, animalColor, animalAge, 0) {}
-Animal::Animal(std::string name, std::string type, std::string color) : Animal(animalName, animalType, animalColor, 0, 0) {}
-Animal::Animal(std::string name, std::string type) : Animal(animalName, animalType, "undefined", 0, 0) {}
-Animal::Animal(std::string name) : Animal(animalName, "undefined", "undefined", 0, 0) {}
-
 // геттеры и сеттеры
-void Animal::setAnimalName(std::string name) {
-    this->animalName = correctAlpha(name);
+void Animal::setAnimalName(std::string animalName) {
+    this->_animalName = correctAlpha(animalName);
 }
 std::string Animal::getAnimalName() {
-    return animalName;
+    return _animalName;
 }
-void Animal::setAnimalType(std::string type) {
-    this->animalType = correctAlpha(type);
+void Animal::setAnimalType(std::string animalType) {
+    this->_animalType = correctAlpha(animalType);
 }
 std::string Animal::getAnimalType() {
-    return animalType;
+    return _animalType;
 }
-void Animal::setAnimalColor(std::string color) {
-    this->animalColor = correctAlpha(color);
+void Animal::setAnimalColor(std::string animalColor) {
+    this->_animalColor = correctAlpha(animalColor);
 }
 std::string Animal::getAnimalColor() {
-    return animalColor;
+    return _animalColor;
 }
-void Animal::setAnimalAge(int age) {
-    this->animalAge = correctCount(age);
+void Animal::setAnimalAge(int animalAge) {
+    this->_animalAge = correctCount(animalAge);
 }
 int Animal::getAnimalAge() {
-    return animalAge;
+    return _animalAge;
 }
-void Animal::setAnimalWeight(float weight) {
-    this->animalWeight = correctCount(weight);
+void Animal::setAnimalWeight(float animalWeight) {
+    this->_animalWeight = correctCount(animalWeight);
 }
 
 float Animal::getAnimalWeight() {
-    return animalWeight;
+    return _animalWeight;
 }
 
 // метод
 void Animal::displayAnimal() {
     setlocale(LC_ALL, "");
-    cout << "Имя: " << animalName << endl;
-    cout << "Вид: " << animalType << endl;
-    cout << "Окрас: " << animalColor << endl;
-    cout << "Возраст: " << animalAge << endl;
-    cout << "Вес: " << animalWeight << endl;
+    cout << "Имя: " << _animalName << endl;
+    cout << "Вид: " << _animalType << endl;
+    cout << "Окрас: " << _animalColor << endl;
+    cout << "Возраст: " << _animalAge << endl;
+    cout << "Вес: " << _animalWeight << endl;
 }

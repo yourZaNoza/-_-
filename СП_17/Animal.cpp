@@ -6,19 +6,19 @@ using namespace age;
 
 class Animal {
 private:
-    std::string _animalName;
-    std::string _animalType;
-    std::string _animalColor;
-    int _animalAge;
-    float _animalWeight;
+    std::string animalName;
+    std::string animalType;
+    std::string animalColor;
+    int animalAge;
+    float animalWeight;
 public:
     // конструкторы
     Animal();
-    Animal(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight);
-    Animal(std::string animalName, std::string animalType, std::string animalColor, int animalAge);
-    Animal(std::string animalName, std::string animalType, std::string animalColor);
-    Animal(std::string animalName, std::string animalType);
-    Animal(std::string animalName);
+    Animal(std::string name, std::string type, std::string color, int age, float weight);
+    Animal(std::string name, std::string type, std::string color, int age);
+    Animal(std::string name, std::string type, std::string color);
+    Animal(std::string name, std::string type);
+    Animal(std::string name);
 
     // деструктор
     ~Animal();
@@ -43,5 +43,5 @@ public:
     float getAnimalWeight();
 
     // метод
-    void displayAnimal();
+    void display();
 };

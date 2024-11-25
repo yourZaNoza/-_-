@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Wild.h"
 using namespace std;
 
@@ -12,20 +11,20 @@ Wild::Wild() {
 }
 
 // список инициализации
-Wild::Wild(std::string name, std::string type, std::string color, int age, float weight, std::string naturePlace) :
-    Animal(name, type, color, age, weight), _naturePlace(correctAlpha(naturePlace)) {}
+Wild::Wild(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight, std::string naturePlace) :
+    Animal(animalName, animalType, animalColor, animalAge, animalWeight), _naturePlace(correctAlpha(naturePlace)) {}
 
 // делегирование конструкторов
-Wild::Wild(std::string name, std::string type, std::string color, int age, int weight) :
-    Animal(name, type, color, age, weight), _naturePlace("undefined") {}
-Wild::Wild(std::string name, std::string type, std::string color, int age) :
-    Animal(name, type, color, age, 0), _naturePlace("undefined") {}
-Wild::Wild(std::string name, std::string type, std::string color) :
-    Animal(name, type, color, 0, 0), _naturePlace("undefined") {}
-Wild::Wild(std::string name, std::string type) :
-    Animal(name, type, "undefined", 0, 0), _naturePlace("undefined") {}
-Wild::Wild(std::string name) :
-    Animal(name, "undefined", "undefined", 0, 0), _naturePlace("undefined") {}
+Wild::Wild(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight) :
+    Animal(animalName, animalType, animalColor, animalAge, animalWeight), _naturePlace("undefined") {}
+Wild::Wild(std::string animalName, std::string animalType, std::string animalColor, int animalAge) :
+    Animal(animalName, animalType, animalColor, animalAge, 0), _naturePlace("undefined") {}
+Wild::Wild(std::string animalName, std::string animalType, std::string animalColor) :
+    Animal(animalName, animalType, animalColor, 0, 0), _naturePlace("undefined") {}
+Wild::Wild(std::string animalName, std::string animalType) :
+    Animal(animalName, animalType, "undefined", 0, 0), _naturePlace("undefined") {}
+Wild::Wild(std::string animalName) :
+    Animal(animalName, "undefined", "undefined", 0, 0), _naturePlace("undefined") {}
 
 // геттеры и сеттеры
 void Wild::setNaturePlace(std::string naturePlace) {

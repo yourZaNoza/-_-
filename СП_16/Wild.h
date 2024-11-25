@@ -1,21 +1,17 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include "Animal.h"
 using namespace age;
 
 class Wild : public Animal {
-private:
-    std::string _naturePlace;
 public:
     // конструкторы
     Wild();
-    Wild(std::string name, std::string type, std::string color, int age, float weight, std::string naturePlace);
-    Wild(std::string name, std::string type, std::string color, int age, int weight);
-    Wild(std::string name, std::string type, std::string color, int age);
-    Wild(std::string name, std::string type, std::string color);
-    Wild(std::string name, std::string type);
-    Wild(std::string name);
+    Wild(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight, std::string naturePlace);
+    Wild(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight);
+    Wild(std::string animalName, std::string animalType, std::string animalColor, int animalAge);
+    Wild(std::string animalName, std::string animalType, std::string animalColor);
+    Wild(std::string animalName, std::string animalType);
+    Wild(std::string animalName);
 
     // геттеры и сеттеры
     void setNaturePlace(std::string naturePlace);
@@ -23,5 +19,7 @@ public:
 
     // метод
     void displayNaturePlace();
+private:
+    std::string _naturePlace;
 };
 

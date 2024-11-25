@@ -1,4 +1,3 @@
-#include <iostream>
 #include "House.h"
 using namespace std;
 
@@ -12,20 +11,20 @@ House::House() {
 }
 
 // список инициализации
-House::House(std::string name, std::string type, std::string color, int age, float weight, std::string livingPlace) :
-    Animal(name, type, color, age, weight), _livingPlace(correctAlpha(livingPlace)) {}
+House::House(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight, std::string livingPlace) :
+    Animal(animalName, animalType, animalColor, animalAge, animalWeight), _livingPlace(correctAlpha(livingPlace)) {}
 
 // делегирование конструкторов
-House::House(std::string name, std::string type, std::string color, int age, int weight) :
-    Animal(name, type, color, age, weight), _livingPlace("undefined") {}
-House::House(std::string name, std::string type, std::string color, int age) :
-    Animal(name, type, color, age, 0), _livingPlace("undefined") {}
-House::House(std::string name, std::string type, std::string color) :
-    Animal(name, type, color, 0, 0), _livingPlace("undefined") {}
-House::House(std::string name, std::string type) :
-    Animal(name, type, "undefined", 0, 0), _livingPlace("undefined") {}
-House::House(std::string name) :
-    Animal(name, "undefined", "undefined", 0, 0), _livingPlace("undefined") {}
+House::House(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight) :
+    Animal(animalName, animalType, animalColor, animalAge, animalWeight), _livingPlace("undefined") {}
+House::House(std::string animalName, std::string animalType, std::string animalColor, int animalAge) :
+    Animal(animalName, animalType, animalColor, animalAge, 0), _livingPlace("undefined") {}
+House::House(std::string animalName, std::string animalType, std::string animalColor) :
+    Animal(animalName, animalType, animalColor, 0, 0), _livingPlace("undefined") {}
+House::House(std::string animalName, std::string animalType) :
+    Animal(animalName, animalType, "undefined", 0, 0), _livingPlace("undefined") {}
+House::House(std::string animalName) :
+    Animal(animalName, "undefined", "undefined", 0, 0), _livingPlace("undefined") {}
 
 // геттеры и сеттеры
 void House::setLivingPlace(std::string livingPlace) {
