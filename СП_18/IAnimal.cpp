@@ -65,3 +65,12 @@ void IAnimal::display() {
     cout << "Возраст: " << _animalAge << endl;
     cout << "Вес: " << _animalWeight << endl;
 }
+void IAnimal::readFromConsole() {
+    setlocale(LC_ALL, "");
+    cout << "Введите имя: " << _animalName; cin >> _animalName;
+    cout << "Введите вид: " << _animalType; cin >> _animalType;
+    cout << "Введите окрас: " << _animalColor; cin >> _animalColor;
+    cout << "Введите возраст: " << _animalAge; cin >> _animalAge;
+    cout << "Введите вес: " << _animalWeight; cin >> _animalWeight;
+}
+//void IAnimal::writeToFile() {}

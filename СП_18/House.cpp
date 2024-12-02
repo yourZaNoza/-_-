@@ -38,13 +38,6 @@ std::string House::getLivingPlace() {
     return _livingPlace;
 }
 
-// метод
-void House::display() {
-    setlocale(LC_ALL, "");
-    IAnimal::display();
-    cout << "Место жительства: " << _livingPlace << "\n" << endl;
-}
-
 // перегруженные операторы 
 House House::operator++() {
     setAnimalWeight(getAnimalWeight() + 0.52);
@@ -78,3 +71,29 @@ ostream& operator<< (ostream& output, House a) {
         << "\n";
     return output;
 }
+
+// методы
+void House::readFromConsole() {
+    IAnimal::readFromConsole();
+    cout << "Введите место жительства: ";
+    std::string place; cin >> place; setLivingPlace(place);
+}
+
+void House::display() {
+    IAnimal::display();
+    cout << "Новое место жительства: " << getLivingPlace() << endl;
+}
+
+//void House::writeToFile() {
+//    std::ofstream out;
+//    out.open("Animal.txt", std::ios::app);
+//    if (out.is_open()) {
+//        out << "Имя: " << getAnimalName() << endl
+//            << "Вид: " << getAnimalType() << endl
+//            << "Окрас: " << getAnimalColor() << endl
+//            << "Возраст: " << getAnimalAge() << endl
+//            << "Место жительства: " << getLivingPlace() << endl
+//            << "\n";
+//    }
+//    out.close();
+//}

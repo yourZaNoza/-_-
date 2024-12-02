@@ -38,13 +38,6 @@ std::string Wild::getNaturePlace() {
     return _naturePlace;
 }
 
-// метод
-void Wild::display() {
-    setlocale(LC_ALL, "");
-    IAnimal::display();
-    cout << "Среда обитания: " << _naturePlace << "\n" << endl;
-}
-
 // перегруженные операторы 
 Wild Wild::operator++() {
     setAnimalWeight(getAnimalWeight() + 0.52);
@@ -78,3 +71,28 @@ ostream& operator<< (ostream& output, Wild a) {
         << "\n";
     return output;
 }
+
+void Wild::readFromConsole() {
+    IAnimal::readFromConsole();
+    cout << "Введите среду обитания: ";
+    std::string place; cin >> place; setNaturePlace(place);
+}
+
+void Wild::display() {
+    IAnimal::display();
+    cout << "Новая среда обитания: " << getNaturePlace() << endl;
+}
+
+//void Wild::writeToFile() {
+//    std::ofstream out;
+//    out.open("Animal.txt", std::ios::app);
+//    if (out.is_open()) {
+//        out << "Имя: " << getAnimalName() << endl
+//            << "Вид: " << getAnimalType() << endl
+//            << "Окрас: " << getAnimalColor() << endl
+//            << "Возраст: " << getAnimalAge() << endl
+//            << "Среда обитания: " << getNaturePlace() << endl
+//            << "\n";
+//    }
+//    out.close();
+//}

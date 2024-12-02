@@ -2,7 +2,7 @@
 #include "IAnimal.h"
 using namespace age;
 
-class Wild : public IAnimal {
+class Wild : virtual public IAnimal {
 public:
     // конструкторы
     Wild();
@@ -29,6 +29,8 @@ public:
 
     // метод
     void display();
+    void readFromConsole();
+    //void writeToFile();
 private:
     std::string _naturePlace;
 };

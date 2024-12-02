@@ -1,8 +1,10 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "IAnimal.h"
 using namespace age;
 
-class House : public IAnimal {
+class House : virtual public IAnimal {
 public:
     // конструкторы
     House();
@@ -28,7 +30,9 @@ public:
     std::string getLivingPlace();
 
     // метод
+    void readFromConsole();
     void display();
+    //void writeToFile();
 private:
     std::string _livingPlace;
 };
