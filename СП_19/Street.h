@@ -2,7 +2,6 @@
 #include "IAnimal.h"
 #include "House.h"
 #include "Wild.h"
-using namespace age;
 
 class Street : public House, Wild {
 public:
@@ -27,8 +26,9 @@ public:
     // метод
     void readFromConsole();
     void display();
-    //void writeToFile();
+    void writeToFile();
 private:
     std::string _livingStreet;
 };
+
 

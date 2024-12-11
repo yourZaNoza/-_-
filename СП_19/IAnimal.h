@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Age.h"
 using namespace age;
 
@@ -36,5 +37,7 @@ public:
     float getAnimalWeight();
 
     // метод
-    virtual void display() = 0;
+    virtual void readFromConsole() = 0;
+    virtual void display();
+    virtual void writeToFile();
 };

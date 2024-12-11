@@ -1,19 +1,12 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include "IAnimal.h"
-using namespace age;
 
-class House : public IAnimal {
+class House : virtual public IAnimal {
 public:
     // конструкторы
     House();
     House(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight, std::string livingPlace);
-    House(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight);
-    House(std::string animalName, std::string animalType, std::string animalColor, int animalAge);
-    House(std::string animalName, std::string animalType, std::string animalColor);
-    House(std::string animalName, std::string animalType);
-    House(std::string animalName);
+    House(std::string _livingPlace);
 
     // деструктор
     ~House();
@@ -23,14 +16,16 @@ public:
     House operator--();
     bool operator< (House other);
     bool operator> (House other);
-    friend std::ostream& operator<< (std::ostream& output, House a);
+    friend std::ostream& operator<< (std::ostream& output, House h);
 
     // геттеры и сеттеры
     void setLivingPlace(std::string livingPlace);
     std::string getLivingPlace();
 
     // метод
+    void readFromConsole();
     void display();
+    void writeToFile();
 private:
     std::string _livingPlace;
 };

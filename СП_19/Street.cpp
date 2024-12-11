@@ -50,37 +50,39 @@ ostream& operator<< (ostream& output, Street s) {
         << "Возраст: " << s.getAnimalAge() << endl
         << "Место жительства: " << s.getLivingPlace() << endl
         << "Улица: " << s.getAnimalWeight() << endl
-        << "\n";
+        << "__________________" << endl;
     return output;
 }
 
 // методы
 void Street::readFromConsole() {
     IAnimal::readFromConsole();
-    cout << "Введите место жительства: ";
-    std::string place; 
-    cin >> place; 
-    setLivingPlace(place);
-    cout << "Введите улицу: "; 
-    cin >> _livingStreet;
+    std::cout << "Введите место жительства: ";
+    std::string livingPlace; std::cin >> livingPlace; setLivingPlace(livingPlace);
+    std::cout << "Введите среду обитания: ";
+    std::string naturePlace; std::cin >> naturePlace; setNaturePlace(naturePlace);
+    std::cout << "Введите улицу: "; std::cin >> _livingStreet;
 }
 
 void Street::display() {
     IAnimal::display();
-    cout << "Информация обновлена" << endl;
+    cout << "Место жительства: " << getLivingPlace() << endl;
+    cout << "Среда обитания: " << getNaturePlace() << endl;
+    cout << "Улица: " << _livingStreet << endl;
 }
 
-//void Street::writeToFile() {
-//    std::ofstream out;
-//    out.open("Animal.txt", std::ios::app);
-//    if (out.is_open()) {
-//        out << "Имя: " << getAnimalName() << endl
-//            << "Вид: " << getAnimalType() << endl
-//            << "Окрас: " << getAnimalColor() << endl
-//            << "Возраст: " << getAnimalAge() << endl
-//            << "Место жительства: " << getLivingPlace() << endl
-//            << "Улица: " << _livingStreet << endl
-//            << "\n";
-//    }
-//    out.close();
-//}
+void Street::writeToFile() {
+    std::ofstream out;
+    out.open("Animal.txt", std::ios::app);
+    if (out.is_open()) {
+        out << "Имя: " << getAnimalName() << endl
+            << "Вид: " << getAnimalType() << endl
+            << "Окрас: " << getAnimalColor() << endl
+            << "Возраст: " << getAnimalAge() << endl
+            << "Место жительства: " << getLivingPlace() << endl
+            << "Среда обитания: " << getNaturePlace() << endl
+            << "Улица: " << _livingStreet << endl
+            << "__________________" << endl;
+    }
+    out.close();
+}

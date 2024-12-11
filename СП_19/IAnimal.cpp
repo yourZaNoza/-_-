@@ -5,23 +5,13 @@ using namespace std;
 IAnimal::~IAnimal() {}
 
 //конструкторы
-IAnimal::IAnimal() {
-    this->_animalName = "undefined";
-    this->_animalType = "undefined";
-    this->_animalColor = "undefined";
-    this->_animalAge = 0;
-    this->_animalWeight = 0;
-}
+IAnimal::IAnimal() : IAnimal("undefined", "undefined", "undefined", 0, 0) {}
 
 // список инициализации
 IAnimal::IAnimal(std::string animalName, std::string animalType, std::string animalColor, int animalAge, float animalWeight) : _animalName(correctAlpha(animalName)),
 _animalType(correctAlpha(animalType)), _animalColor(correctAlpha(animalColor)), _animalAge(correctCount(animalAge)), _animalWeight(correctCount(animalWeight)) {}
 
 // делегирование конструкторов
-IAnimal::IAnimal(std::string animalName, std::string animalType, std::string animalColor, int animalAge) : IAnimal(animalName, animalType, animalColor, animalAge, 0) {}
-IAnimal::IAnimal(std::string animalName, std::string animalType, std::string animalColor) : IAnimal(animalName, animalType, animalColor, 0, 0) {}
-IAnimal::IAnimal(std::string animalName, std::string animalType) : IAnimal(animalName, animalType, "undefined", 0, 0) {}
-IAnimal::IAnimal(std::string animalName) : IAnimal(animalName, "undefined", "undefined", 0, 0) {}
 
 // геттеры и сеттеры
 void IAnimal::setAnimalName(std::string animalName) {
@@ -51,6 +41,7 @@ int IAnimal::getAnimalAge() {
 void IAnimal::setAnimalWeight(float animalWeight) {
     this->_animalWeight = correctCount(animalWeight);
 }
+
 float IAnimal::getAnimalWeight() {
     return _animalWeight;
 }
@@ -64,3 +55,12 @@ void IAnimal::display() {
     cout << "Возраст: " << _animalAge << endl;
     cout << "Вес: " << _animalWeight << endl;
 }
+void IAnimal::readFromConsole() {
+    setlocale(LC_ALL, "");
+    std::cout << "Введите имя: "; std::cin >> _animalName;
+    std::cout << "Введите вид: "; std::cin >> _animalType;
+    std::cout << "Введите окрас: "; std::cin >> _animalColor;
+    std::cout << "Введите возраст: "; std::cin >> _animalAge;
+    std::cout << "Введите вес: "; std::cin >> _animalWeight;
+}
+void IAnimal::writeToFile() {}

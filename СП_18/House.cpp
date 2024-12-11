@@ -72,28 +72,9 @@ ostream& operator<< (ostream& output, House a) {
     return output;
 }
 
-// методы
-void House::readFromConsole() {
-    IAnimal::readFromConsole();
-    cout << "Введите место жительства: ";
-    std::string place; cin >> place; setLivingPlace(place);
-}
+// метод
 
 void House::display() {
     IAnimal::display();
     cout << "Новое место жительства: " << getLivingPlace() << endl;
 }
-
-//void House::writeToFile() {
-//    std::ofstream out;
-//    out.open("Animal.txt", std::ios::app);
-//    if (out.is_open()) {
-//        out << "Имя: " << getAnimalName() << endl
-//            << "Вид: " << getAnimalType() << endl
-//            << "Окрас: " << getAnimalColor() << endl
-//            << "Возраст: " << getAnimalAge() << endl
-//            << "Место жительства: " << getLivingPlace() << endl
-//            << "\n";
-//    }
-//    out.close();
-//}
